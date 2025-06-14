@@ -80,7 +80,7 @@ export default function Header() {
                 <IconComponent
                   size={24}
                   className={`transition-colors duration-300 ${
-                    hoveredIndex === index ? 'text-green-500' : 'text-green-400'
+                    hoveredIndex === index ? 'text-[#FFB6C1]' : 'text-[#FFB6C1]/80'
                   }`}
                 />
               </motion.div>
@@ -88,7 +88,7 @@ export default function Header() {
           );
         })}
 
-        <div className="flex items-center gap-2 px-2 border-x border-green-400">
+        <div className="flex items-center gap-2 px-2 border-x border-[#FFB6C1]-400">
           {socialItems.map(({ href, label, icon }, index) => {
             const IconComponent = hoveredSocialIndex === index ? icon.hover : icon.default;
 
@@ -110,7 +110,7 @@ export default function Header() {
                   <IconComponent
                     size={24}
                     className={`transition-colors duration-300 ${
-                      hoveredSocialIndex === index ? 'text-green-500' : 'text-green-400'
+                      hoveredSocialIndex === index ? 'text-[#FFB6C1]' : 'text-[#FFB6C1]/80'
                     }`}
                   />
                 </motion.div>

@@ -4,6 +4,7 @@ import Image from "next/image";
 import PageMetaHeads from "@/components/shared/PageMetaHeads";
 import Projects from "@/components/projects/projects";
 import Tools from "@/components/tools/tools";
+import GetInTouch from '@/components/shared/GetInTouch';
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
         </section>
         <Projects />
         <Tools />
+        <GetInTouch />
       </div>
     </>
   );

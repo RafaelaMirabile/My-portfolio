@@ -20,4 +20,3 @@ export default function Projects() {
     </main>
   );
 }
-// This code defines a simple React component that displays a list of projects.

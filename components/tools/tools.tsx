@@ -7,8 +7,8 @@ const tools = [
 
 export default function Tools() {
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
-      <h2 className="text-3xl font-extrabold mb-4">The tools I use to get the job done</h2>
+    <div className=" mx-auto p-6 bg-[#FFD700]">
+      <h2 className="text-3xl  mb-4 text-align-center">The tools I use to get the job done</h2>
       <p className="text-gray-600 mb-6">
         I'm always curious about the latest tech and love pushing myself to learn new things.
         Here are some of the tools and skills I use.
@@ -17,8 +17,8 @@ export default function Tools() {
         {tools.map((tool) => (
           <span
             key={tool}
-            className="hover:bg-[#FFB6C1] bg-teal-300 text-black font-semibold px-4 py-2 rounded-full shadow-sm cursor-default"
-          >
+            className="bg-[#FFB6C1] hover:bg-[#32CD32] text-black  px-4 py-2  shadow-sm cursor-pointer border border-black"
+           >
             {tool}
           </span>
         ))}
