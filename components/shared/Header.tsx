@@ -80,7 +80,7 @@ export default function Header() {
                 <IconComponent
                   size={24}
                   className={`transition-colors duration-300 ${
-                    hoveredIndex === index ? 'text-[#FFB6C1]' : 'text-[#FFB6C1]/80'
+                    hoveredIndex === index ? 'text-[#FFB6C1]' : 'text-black/80'
                   }`}
                 />
               </motion.div>
@@ -110,7 +110,7 @@ export default function Header() {
                   <IconComponent
                     size={24}
                     className={`transition-colors duration-300 ${
-                      hoveredSocialIndex === index ? 'text-[#FFB6C1]' : 'text-[#FFB6C1]/80'
+                      hoveredSocialIndex === index ? 'text-[#FFB6C1]' : 'text-black/80'
                     }`}
                   />
                 </motion.div>

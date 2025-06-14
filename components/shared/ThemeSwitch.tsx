@@ -24,13 +24,13 @@ export default function ThemeSwitch(){
     )
 if(resolvedTheme === 'dark'){
     return <FiSun 
-    className="text-white stroke-[#FFB6C1]  transition-all duration-300 ease-in-out" 
+    className="text-white stroke-black  transition-all duration-300 ease-in-out" 
     size={26}
     onClick={() => setTheme('light')} />
   }
   if(resolvedTheme === 'light'){
     return <FiMoon onClick={() => setTheme('dark')}  
-    className="text-white stroke-[#FFB6C1] transition-all duration-300 ease-in-out" 
+    className="text-white stroke-black transition-all duration-300 ease-in-out" 
     size={26}
     />
   }

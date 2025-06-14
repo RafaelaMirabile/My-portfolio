@@ -16,8 +16,8 @@ export default function LayeredButtonGetInTouch() {
       </div>
 
       {/* Botão principal */}
-      <button className="relative z-20 px-6 py-3 bg-yellow-400 text-black font-bold 
-                         rounded border-2 border-black shadow-md transition-all duration-300">
+      <button className="relative z-20 px-6 py-3 bg-[#FF6347] text-black  
+                        rounded border-2 border-black shadow-md transition-all duration-300">
         Send me an email
       </button>
     </div>
