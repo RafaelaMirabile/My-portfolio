@@ -162,3 +162,7 @@ body {
 .animate-delay {
   animation-delay: 3s;
 }
+
+html {
+  scroll-behavior: smooth;
+}

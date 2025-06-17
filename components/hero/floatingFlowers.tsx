@@ -17,8 +17,8 @@ type FloatingFlowerProps = {
 
 export default function FloatingFlower({
   src,
-  width = 450,
-  height = 450,
+  width = 430,
+  height = 430,
   top,
   left,
   right,

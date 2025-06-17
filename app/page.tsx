@@ -6,8 +6,23 @@ import Tools from "@/components/tools/tools";
 import Image from "next/image";
 import './globals.css';
 import Hero from "@/components/hero/hero";
+import { useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 
 export default function Home() {
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const scrollTo = searchParams.get('scrollTo');
+    if (scrollTo) {
+      const section = document.getElementById(scrollTo);
+      if (section) {
+        setTimeout(() => {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [searchParams]);
   return (
     <>
       <PageMetaHeads title="Home | My Portfolio" />

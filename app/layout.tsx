@@ -14,16 +14,15 @@ import {
   useTransform,
 } from 'framer-motion';
 import { cn } from "@/lib/utils";
-
 import { FiHome, FiFolder, FiUser, FiMail, FiGithub, FiLinkedin } from 'react-icons/fi';
 import Link from 'next/link';
 import { Separator } from '@/components/magicui/separator';
 
-// 1. Array of icons
 const navIcons = {
   navbar: [
     { href: '/', icon: FiHome, label: 'Home' },
     { href: '/about', icon: FiUser, label: 'Me' },
+    { href: '/?scrollTo=contact', icon: FiMail, label: 'contact' },
   ],
   contact: {
     social: {
@@ -36,11 +35,6 @@ const navIcons = {
         name: 'LinkedIn',
         href: 'https://www.linkedin.com/in/seu-usuario',
         icon: FiLinkedin,
-      },
-      email: {
-        name: 'Send Email',
-        href: 'mailto:rafaelamirabile8@gmail.com',
-        icon: FiMail,
       },
     },
   },
