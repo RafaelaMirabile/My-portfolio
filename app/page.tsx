@@ -1,32 +1,41 @@
 'use client';
-import './globals.css';
-import Image from "next/image";
-import PageMetaHeads from "@/components/shared/PageMetaHeads";
 import Projects from "@/components/projects/projects";
-import Tools from "@/components/tools/tools";
 import GetInTouch from '@/components/shared/GetInTouch';
+import PageMetaHeads from "@/components/shared/PageMetaHeads";
+import Tools from "@/components/tools/tools";
+import Image from "next/image";
+import './globals.css';
+import Hero from "@/components/hero/hero";
 
 export default function Home() {
   return (
     <>
       <PageMetaHeads title="Home | My Portfolio" />
       <div>
-        <section className="min-h-[100dvh] w-full px-4 flex flex-col md:flex-row gap-4 items-center border border-red-500">
-          <div className="border-purple-500 border-solid border-2">
-            <h1 className="text-4xl font-bold">Welcome to Next.js!</h1>
-            <p className="mt-4 text-lg">This is a simple Next.js application.</p>
-            <button className="mt-4 bg-blue-500 text-white px-4 py-2 rounded">cv</button>
-          </div>
-          <div className='max-w-sm'>
-            <Image
-              src="/images/nextjs.png"
-              alt="Next.js Logo"
-              width={0} 
-              height={0}
-              className="w-full h-auto border-2 border-orange-500"
-            />
-          </div>
-        </section>
+        <Hero/>
+<section className="w-full min-h-screen flex items-center justify-between px-8 py-16 bg-orange-500 text-white">
+  <div className="max-w-xl space-y-6">
+    <h1 className="text-5xl font-extrabold leading-tight">
+      Construa com cor,<br /> destaque com estilo.
+    </h1>
+    <p className="text-lg">
+      Um portfólio com impacto visual e personalidade forte. Explore meus projetos.
+    </p>
+    <button className="bg-white text-orange-600 font-bold py-3 px-6 rounded hover:bg-gray-100 transition">
+      Ver Projetos
+    </button>
+  </div>
+  <div className="hidden md:block w-[400px] h-[600px] bg-purple-600 rounded-lg overflow-hidden border-8 border-white">
+    <Image
+      src="/images/banner_pic-removebg-preview.png"
+      alt="Minha foto"
+      width={400}
+      height={600}
+      className="object-cover w-full h-full border-8 border-white"
+    />
+  </div>
+</section>
+
         <Projects />
         <Tools />
         <GetInTouch />

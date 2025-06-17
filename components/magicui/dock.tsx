@@ -1,9 +1,5 @@
-'use client';
-import './globals.css';
-import Header from '../components/shared/Header';
-import Providers from './providers';
-import PageWrapper from '@/components/shared/PageWrapper';
-import React, { useRef, PropsWithChildren } from 'react';
+"use client";
+
 import { cva, type VariantProps } from "class-variance-authority";
 import {
   motion,
@@ -12,80 +8,10 @@ import {
   useMotionValue,
   useSpring,
   useTransform,
-} from 'framer-motion';
+} from "motion/react";
+import React, { PropsWithChildren, useRef } from "react";
+
 import { cn } from "@/lib/utils";
-
-import { FiHome, FiFolder, FiUser, FiMail, FiGithub, FiLinkedin } from 'react-icons/fi';
-import Link from 'next/link';
-import { Separator } from '@/components/magicui/separator';
-
-// 1. Array of icons
-const navIcons = {
-  navbar: [
-    { href: '/', icon: FiHome, label: 'Home' },
-    { href: '/about', icon: FiUser, label: 'Me' },
-  ],
-  contact: {
-    social: {
-      GitHub: {
-        name: 'GitHub',
-        href: 'https://github.com/seu-usuario',
-        icon: FiGithub,
-      },
-      LinkedIn: {
-        name: 'LinkedIn',
-        href: 'https://www.linkedin.com/in/seu-usuario',
-        icon: FiLinkedin,
-      },
-      email: {
-        name: 'Send Email',
-        href: 'mailto:rafaelamirabile8@gmail.com',
-        icon: FiMail,
-      },
-    },
-  },
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="min-h-screen flex flex-col overflow-x-hidden">
-        <Providers>
-          {/* --- 2. Dock with merged DATA.navbar and social icons --- */}
-          <Dock className=' z-50 fixed bottom-2 left-1/2 -translate-x-1/2'>
-            {/* Navbar items */}
-            {navIcons.navbar.map(({ icon: Icon, label, href }) => (
-              <DockIcon key={label}>
-                <Link href={href}>
-                  <Icon className="h-5 w-5 text-muted-foreground" />
-                </Link>
-              </DockIcon>
-
-            ))}
-            <Separator orientation="vertical" className="mx-1 h-6 bg-muted" />
-            {/* Social items */}
-            {Object.values(navIcons.contact.social).map(({ icon: Icon, name, href }) => (
-
-              <DockIcon key={name}>
-                <Link href={href}>
-                  <Icon className="h-5 w-5 text-muted-foreground" />
-                </Link>
-              </DockIcon>
-            ))}
-          </Dock>
-
-          <main className="flex-grow mb-24 border border-red-500">
-            <PageWrapper>{children}</PageWrapper>
-          </main>
-        </Providers>
-      </body>
-    </html>
-  );
-}
 
 export interface DockProps extends VariantProps<typeof dockVariants> {
   className?: string;
@@ -101,7 +27,7 @@ const DEFAULT_MAGNIFICATION = 60;
 const DEFAULT_DISTANCE = 140;
 
 const dockVariants = cva(
-  "rounded-full supports-backdrop-blur:bg-white/10 supports-backdrop-blur:dark:bg-black/10 mx-auto mt-8 flex h-[58px] w-max items-center justify-center gap-2 rounded-2xl border p-2 backdrop-blur-md",
+  "supports-backdrop-blur:bg-white/10 supports-backdrop-blur:dark:bg-black/10 mx-auto mt-8 flex h-[58px] w-max items-center justify-center gap-2 rounded-2xl border p-2 backdrop-blur-md",
 );
 
 const Dock = React.forwardRef<HTMLDivElement, DockProps>(
@@ -140,9 +66,7 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
     return (
       <motion.div
         ref={ref}
-        onMouseMove={(e) => {
-          mouseX.set(e.clientX);
-        }}
+        onMouseMove={(e) => mouseX.set(e.pageX)}
         onMouseLeave={() => mouseX.set(Infinity)}
         {...props}
         className={cn(dockVariants({ className }), {
@@ -205,7 +129,7 @@ const DockIcon = ({
       ref={ref}
       style={{ width: scaleSize, height: scaleSize, padding }}
       className={cn(
-        "flex aspect-square cursor-pointer items-center justify-center rounded-full hover:bg-[#FFB6C1]",
+        "flex aspect-square cursor-pointer items-center justify-center rounded-full",
         className,
       )}
       {...props}
@@ -217,4 +141,4 @@ const DockIcon = ({
 
 DockIcon.displayName = "DockIcon";
 
-
+export { Dock, DockIcon, dockVariants };
