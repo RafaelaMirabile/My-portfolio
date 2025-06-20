@@ -7,7 +7,7 @@ const tools = [
 
 export default function Tools() {
   return (
-    <div className=" mx-auto p-6 bg-[#FFD700]">
+    <div className=" mx-auto p-6 bg-[#FFD700]" id="tools">
       <h2 className="text-3xl mb-4 text-center">The tools I use to get the job done</h2>
       <p className="text-black-600 mb-6">
         I'm always curious about the latest tech and love pushing myself to learn new things.

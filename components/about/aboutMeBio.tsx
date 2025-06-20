@@ -3,7 +3,7 @@ export default function AboutMeBio() {
   //motion
     return (
         <>
-      <div className="max-w-2xl mx-auto px-4 py-8">
+      <div className="max-w-2xl mx-auto px-4 py-8 bg-gray-100;">
       <h1 className="text-3xl font-bold mb-4">About Me</h1>
       <p className="text-lg mb-4">
         Hello! I&apos;m a passionate developer with a love for creating dynamic and engaging web applications. 

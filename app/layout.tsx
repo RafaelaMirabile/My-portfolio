@@ -1,6 +1,5 @@
 'use client';
 import './globals.css';
-import Header from '../components/shared/Header';
 import Providers from './providers';
 import PageWrapper from '@/components/shared/PageWrapper';
 import React, { useRef, PropsWithChildren } from 'react';
@@ -14,7 +13,7 @@ import {
   useTransform,
 } from 'framer-motion';
 import { cn } from "@/lib/utils";
-import { FiHome, FiFolder, FiUser, FiMail, FiGithub, FiLinkedin } from 'react-icons/fi';
+import { FiHome, FiUser, FiMail, FiGithub, FiLinkedin, FiTool, FiFolderPlus } from 'react-icons/fi';
 import Link from 'next/link';
 import { Separator } from '@/components/magicui/separator';
 
@@ -23,6 +22,8 @@ const navIcons = {
     { href: '/', icon: FiHome, label: 'Home' },
     { href: '/about', icon: FiUser, label: 'Me' },
     { href: '/?scrollTo=contact', icon: FiMail, label: 'contact' },
+    { href: '/?scrollTo=tools', icon: FiTool, label: 'tool' },
+    { href: '/?scrollTo=experience', icon: FiFolderPlus, label: 'work experience'},
   ],
   contact: {
     social: {
@@ -61,9 +62,7 @@ export default function RootLayout({
 
             ))}
             <Separator orientation="vertical" className="mx-1 h-6 bg-muted" />
-            {/* Social items */}
             {Object.values(navIcons.contact.social).map(({ icon: Icon, name, href }) => (
-
               <DockIcon key={name}>
                 <Link href={href}>
                   <Icon className="h-5 w-5 text-muted-foreground" />
@@ -174,7 +173,7 @@ const DockIcon = ({
   ...props
 }: DockIconProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  const padding = Math.max(6, size * 0.2);
+  const padding = Math.max(2, size * 0.1);
   const defaultMouseX = useMotionValue(Infinity);
 
   const distanceCalc = useTransform(mouseX ?? defaultMouseX, (val: number) => {
