@@ -5,7 +5,7 @@ import PageMetaHeads from "@/components/shared/PageMetaHeads";
 import Tools from "@/components/tools/tools";
 import './globals.css';
 import Hero from "@/components/hero/hero";
-import { useEffect } from "react";
+import { useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Experience from "@/components/experience/experience";
 
@@ -27,6 +27,7 @@ useEffect(() => {
 }, [searchParams]);
 
   return (
+    <Suspense fallback={<div>Loading...</div>}>
     <>
       <PageMetaHeads title="Home | My Portfolio" />
       <div>
@@ -37,5 +38,6 @@ useEffect(() => {
         <GetInTouch />
       </div>
     </>
+    </Suspense>
   );
 }
