@@ -16,6 +16,9 @@ import { cn } from "@/lib/utils";
 import { FiHome, FiUser, FiMail, FiGithub, FiLinkedin, FiTool, FiFolderPlus } from 'react-icons/fi';
 import Link from 'next/link';
 import { Separator } from '@/components/magicui/separator';
+import { Outfit } from 'next/font/google'
+
+const outfit = Outfit({ subsets: ['latin'], weight: ['400', '600', '700'] })
 
 const navIcons = {
   navbar: [
@@ -48,7 +51,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="min-h-screen flex flex-col overflow-x-hidden">
+      <body className="flex flex-col overflow-x-hidden">
         <Providers>
           {/* --- 2. Dock with merged DATA.navbar and social icons --- */}
           <Dock className=' z-50 fixed bottom-2 left-1/2 -translate-x-1/2'>
@@ -56,22 +59,21 @@ export default function RootLayout({
             {navIcons.navbar.map(({ icon: Icon, label, href }) => (
               <DockIcon key={label}>
                 <Link href={href}>
-                  <Icon className="h-5 w-5 text-muted-foreground" />
+                  <Icon className="h-5 w-5 text-black" />
                 </Link>
               </DockIcon>
 
             ))}
-            <Separator orientation="vertical" className="mx-1 h-6 bg-muted" />
+            <Separator orientation="vertical" className="mx-1 h-6 bg-black" />
             {Object.values(navIcons.contact.social).map(({ icon: Icon, name, href }) => (
               <DockIcon key={name}>
                 <Link href={href}>
-                  <Icon className="h-5 w-5 text-muted-foreground" />
+                  <Icon className="h-5 w-5 text-black" />
                 </Link>
               </DockIcon>
             ))}
           </Dock>
-
-          <main className="flex-grow mb-24 border border-red-500">
+          <main className="flex-grow mb-24 border min-h-screen">
             <PageWrapper>{children}</PageWrapper>
           </main>
         </Providers>
@@ -94,8 +96,9 @@ const DEFAULT_MAGNIFICATION = 60;
 const DEFAULT_DISTANCE = 140;
 
 const dockVariants = cva(
-  "rounded-full supports-backdrop-blur:bg-white/10 supports-backdrop-blur:dark:bg-black/10 mx-auto mt-8 flex h-[58px] w-max items-center justify-center gap-2 rounded-2xl border p-2 backdrop-blur-md",
+  "rounded-full supports-backdrop-blur:bg-white/10 supports-backdrop-blur:dark:bg-black/10 mx-auto mt-8 flex h-[58px] w-max items-center justify-center gap-2 rounded-2xl border-2 border-black p-2 backdrop-blur-md",
 );
+
 
 const Dock = React.forwardRef<HTMLDivElement, DockProps>(
   (
@@ -188,7 +191,7 @@ const DockIcon = ({
   );
 
   const scaleSize = useSpring(sizeTransform, {
-    mass: 0.1,
+    mass: 0.5,
     stiffness: 150,
     damping: 12,
   });
@@ -198,7 +201,7 @@ const DockIcon = ({
       ref={ref}
       style={{ width: scaleSize, height: scaleSize, padding }}
       className={cn(
-        "flex aspect-square cursor-pointer items-center justify-center rounded-full hover:bg-[#FFB6C1]",
+        "flex aspect-square cursor-pointer items-center justify-center rounded-full hover:bg-[#5F9EA0]",
         className,
       )}
       {...props}

@@ -10,6 +10,7 @@ const experienceData = [
       "Improved user onboarding flow.",
       "Fixed bugs reported by users.",
     ],
+    bgColor: "bg-pink-400",
   },
   {
     title: "LifeMathMoney: How I launched my product and grew a following",
@@ -19,6 +20,7 @@ const experienceData = [
       "Launched marketing campaigns.",
       "Received 500+ new subscribers.",
     ],
+    bgColor: "bg-[#FFC600]",
   },
   {
     title: "Small Bets is joining Gumroad 🎉",
@@ -28,6 +30,7 @@ const experienceData = [
       "Merged product roadmaps.",
       "Onboarded Small Bets team.",
     ],
+    bgColor: "bg-[#5F9EA0]",
   },
 ];
 
@@ -39,30 +42,38 @@ export default function Experience() {
   };
 
   return (
-    <section id="experience" className="px-6 py-16 bg-white">
+    <section id="experience" className="px-6 py-16 h-[30rem] flex items-center justify-center">
       <div className="max-w-3xl mx-auto space-y-6">
         {experienceData.map((item, index) => {
           const isExpanded = expandedIndex === index;
           return (
-            <div key={index} className="border-b pb-4 flex flex-col">
+            <div key={index}>
               <button
                 onClick={() => toggleCard(index)}
-                className="flex items-center justify-between w-full"
+                className="flex items-center justify-between w-[50rem]"
               >
-                <div className="flex items-center space-x-4">
-                  <h3 className="text-lg font-semibold">{item.title}</h3>
+                <div className="flex w-full flex-col items-start">
+                  <h3 className="text-lg">{item.title}</h3>
                   <p className="text-sm text-gray-500">{item.date}</p>
                 </div>
 
-                <div
-                  className="border rounded-lg p-2 hover:bg-gray-100 transition"
-                  aria-expanded={isExpanded}
-                >
-                  <FiArrowRight
-                    className={`h-5 w-5 transition-transform duration-300 ${
-                      isExpanded ? "rotate-90" : "rotate-0"
-                    }`}
+                {/* Seta com camada atrás */}
+                <div className="relative inline-block">
+                  {/* Camada de fundo atrás da seta */}
+                  <div
+                    className={`absolute inset-0 ${item.bgColor} rounded border-2 border-black translate-x-1 translate-y-1 z-0`}
                   />
+                  {/* Botão com ícone */}
+                  <div
+                    className="relative z-10 border-2 border-black p-2 bg-white rounded transition"
+                    aria-expanded={isExpanded}
+                  >
+                    <FiArrowRight
+                      className={`h-5 w-5 transition-transform duration-300 ${
+                        isExpanded ? "rotate-90" : "rotate-0"
+                      }`}
+                    />
+                  </div>
                 </div>
               </button>
 
