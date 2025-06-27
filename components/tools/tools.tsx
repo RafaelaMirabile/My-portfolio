@@ -10,7 +10,7 @@ export default function Tools() {
     <div className="border-black border-t-2 border-b-2 mx-auto min-h-[370px] p-14 bg-[#FFC600]" id="tools">
       <h2 className="text-3xl mb-4 text-center">The tools I use to get the job done</h2>
       <p className="text-black-600 mb-6">
-        I'm always curious about the latest tech and love pushing myself to learn new things.
+        I&apos;m always curious about the latest tech and love pushing myself to learn new things.
         Here are some of the tools and skills I use.
       </p>
       <div className="flex flex-wrap gap-3">
@@ -18,7 +18,7 @@ export default function Tools() {
           <span
             key={tool}
             className="bg-[#5F9EA0] text-black  px-4 py-2  shadow-sm cursor-pointer border border-black"
-           >
+          >
             {tool}
           </span>
         ))}

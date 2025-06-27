@@ -16,9 +16,7 @@ import { cn } from "@/lib/utils";
 import { FiHome, FiUser, FiMail, FiGithub, FiLinkedin, FiTool, FiFolderPlus } from 'react-icons/fi';
 import Link from 'next/link';
 import { Separator } from '@/components/magicui/separator';
-import { Outfit } from 'next/font/google'
 
-const outfit = Outfit({ subsets: ['latin'], weight: ['400', '600', '700'] })
 
 const navIcons = {
   navbar: [
