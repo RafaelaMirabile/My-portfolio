@@ -1,10 +1,10 @@
 import React, { Suspense } from 'react';
-import Home from './home';
+import HomeClient from './homeClient';
 
 export default function Page() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <Home />
+      <HomeClient />
     </Suspense>
   );
 }
