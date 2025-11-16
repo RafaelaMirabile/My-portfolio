@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, HTMLMotionProps, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { motion, HTMLMotionProps, useMotionValue, useSpring, useTransform, MotionValue } from 'framer-motion';
 import React, { useRef } from 'react';
 import { FiHome, FiUser, FiMail, FiGithub, FiLinkedin, FiTool, FiFolderPlus } from 'react-icons/fi';
 import Link from 'next/link';
@@ -58,7 +58,7 @@ function DockContainer({ children }: { children: React.ReactNode }) {
     >
       {React.Children.map(children, (child) => {
         if (React.isValidElement<DockIconProps>(child) && child.type === DockIcon) {
-          // TypeScript now knows child accepts DockIconProps
+          // Pass typed mouseX
           return React.cloneElement(child, { mouseX });
         }
         return child;
@@ -67,13 +67,11 @@ function DockContainer({ children }: { children: React.ReactNode }) {
   );
 }
 
-
-
 interface DockIconProps extends HTMLMotionProps<'div'> {
   size?: number;
   magnification?: number;
   distance?: number;
-  mouseX?: any;
+  mouseX?: MotionValue<number>; // ✅ properly typed
 }
 
 function DockIcon({
@@ -88,7 +86,7 @@ function DockIcon({
   const padding = Math.max(2, size * 0.1);
   const defaultMouseX = useMotionValue(Infinity);
 
-  const distanceCalc = useTransform(mouseX ?? defaultMouseX, (val: number) => {
+  const distanceCalc = useTransform(mouseX ?? defaultMouseX, (val) => {
     const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
     return val - bounds.x - bounds.width / 2;
   });
