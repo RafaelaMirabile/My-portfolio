@@ -4,8 +4,6 @@ import GetInTouch from '@/components/shared/GetInTouch';
 import Tools from "@/components/tools/tools";
 import './globals.css';
 import Hero from "@/components/hero/hero";
-import { useEffect} from "react";
-import { useSearchParams } from "next/navigation";
 import Experience from "@/components/experience/experience";
 
 
