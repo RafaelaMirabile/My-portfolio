@@ -9,22 +9,7 @@ import { useSearchParams } from "next/navigation";
 import Experience from "@/components/experience/experience";
 
 
-export default function Home() {
-  const searchParams = useSearchParams();
-
-useEffect(() => {
-  const scrollTo = searchParams.get('scrollTo');
-  if (scrollTo) {
-    const section = document.getElementById(scrollTo);
-    if (section) {
-      setTimeout(() => {
-        section.scrollIntoView({ behavior: 'smooth' });
-        window.history.replaceState({}, '', window.location.pathname);
-      }, 100);
-    }
-  }
-}, [searchParams]);
-
+export default function HomeClient() {
   return ( 
     <>
       <div>
