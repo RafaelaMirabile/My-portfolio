@@ -1,4 +1,3 @@
-'use client';
 import './globals.css';
 import Providers from './providers';
 import PageWrapper from '@/components/shared/PageWrapper';
@@ -17,6 +16,11 @@ import { FiHome, FiUser, FiMail, FiGithub, FiLinkedin, FiTool, FiFolderPlus } fr
 import Link from 'next/link';
 import { Separator } from '@/components/magicui/separator';
 
+export const metadata = {
+  title: "Next.js & TailwindCSS & TypeScript Portfolio Project",
+  description: "Simple Page application with Next.js, TailwindCSS and TypeScript",
+  keywords: "next,js,tailwindcss,typescript,portfolio,project,web, ui",
+};
 
 const navIcons = {
   navbar: [

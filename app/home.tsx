@@ -1,7 +1,6 @@
 'use client';
 import Projects from "@/components/projects/projects";
 import GetInTouch from '@/components/shared/GetInTouch';
-import PageMetaHeads from "@/components/shared/PageMetaHeads";
 import Tools from "@/components/tools/tools";
 import './globals.css';
 import Hero from "@/components/hero/hero";
@@ -28,9 +27,8 @@ useEffect(() => {
 
   return ( 
     <>
-      <PageMetaHeads title="Home | My Portfolio" />
       <div>
-        <Hero/>
+        <Hero />
         <Projects />
         <Tools />
         <Experience />
