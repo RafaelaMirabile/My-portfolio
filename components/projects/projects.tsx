@@ -8,7 +8,7 @@ export default function Projects() {
       description: "R.WebSig is a website that makes it easy to explore demographic data from the 2021 Census. It uses the Google Maps API to display interactive district polygons, showing Portugal's population density, district names, county numbers, and their geographical boundaries in a clear and visual way.",
       tags: ["HTML", "CSS", "JavaScript", "Node.js"],
       bgColor: "bg-[#5F9EA0]",
-      image: "./public/images/R.Websig.png",
+      image: "/images/R.Websig.png",
       href: "https://densidade-populacional-portugual-2021.vercel.app/",
     },
     {
@@ -16,7 +16,7 @@ export default function Projects() {
       description: "MyWallet is a full-stack app that makes it easy to track your finances. Add, edit, or delete transactions with descriptions and amounts, all in a simple and interactive interface built with React.",
       tags: ["React", "Node.js", "Figma", "MongoDB", "Bcrypt"],
       bgColor: "bg-[#FF5733]",
-      image: "/icons/project2.svg",
+      image: "/images/MyWallet.png",
       href: "https://mywallet-iota.vercel.app/",
     },
     {
@@ -24,7 +24,7 @@ export default function Projects() {
       description: "My personal website in NextJS, Typescript and TailwindCSS using MagicUI components, with highly customized design, theme and animations.",
       tags: ["Next.js", "Typescript", "TailwindCSS"],
       bgColor: "bg-[#FFC600]",
-      image: "/icons/project3.svg",
+      image: "/images/RafaelaMirabilePortfolio.png",
       href: "https://my-portfolio-i8k0uhytz-rafaelamirabiles-projects.vercel.app/",
     },
   ];
