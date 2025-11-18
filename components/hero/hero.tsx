@@ -12,7 +12,7 @@ export default function Hero() {
       <FloatingFlower src="/images/flower4bgt.png" bottom="92%" right="28%" alt="flower3" zIndex="20"/>
       <section className="flex flex-col items-center justify-center border border-black bg-gray-100 px-8 py-12 lg:px-[8vw] md:py-24 w-full z-10">
         <div className="text-center">
-          <h1 className="text-3xl">Hi, I &apos; m Rafa.</h1>
+          <h1 className="text-3xl">Hi,I&apos;m Rafa.</h1>
           <p className="mt-6 text-3xl text-gray-800">CMS Editor & Web Developer</p>
         </div>
       </section>

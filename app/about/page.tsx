@@ -15,7 +15,7 @@ function HeroSection() {
       <section className="relative border-t border-b border-black flex flex-col-reverse md:flex-row justify-between items-center px-26 py-6 bg-pink-400 overflow-hidden">
         <div className="max-w-xl text-black relative">
           <p className="text-xl md:text-2xl font-medium">
-            “I’m a Content Editor and Web Developer with experience maintaining and optimizing websites, creating new pages, ensuring UX quality, configuring site features, and leveraging CMS and analytics to deliver high-quality digital experiences.”
+            “I&apos;m a Content Editor and Web Developer with experience maintaining and optimizing websites, creating new pages, configuring site features, and leveraging CMS and analytics to deliver high-quality digital experiences.”
           </p>
         </div>
         <div className="relative">
