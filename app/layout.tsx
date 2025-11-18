@@ -4,9 +4,12 @@ import PageWrapper from '@/components/shared/PageWrapper';
 import Dock from '../components/Dock';
 
 export const metadata = {
-  title: "Next.js & TailwindCSS & TypeScript Portfolio Project",
-  description: "Simple Page application with Next.js, TailwindCSS and TypeScript",
+  title: "Rafaela C. Mirabile",
+  description: "Simple Page application with Next.js, TailwindCSS and TypeScript - Portfolio Project",
   keywords: "next,js,tailwindcss,typescript,portfolio,project,web,ui",
+    icons: {
+    icon: "/images/FlowerPortf.png",        
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -24,7 +24,7 @@ export default function Projects() {
       description: "My personal website in NextJS, Typescript and TailwindCSS using MagicUI components, with highly customized design, theme and animations.",
       tags: ["Next.js", "Typescript", "TailwindCSS"],
       bgColor: "bg-[#FFC600]",
-      image: "/images/portflower.png",
+      image: "/images/FlowerPortf.png",
       href: "https://my-portfolio-i8k0uhytz-rafaelamirabiles-projects.vercel.app/",
     },
   ];
