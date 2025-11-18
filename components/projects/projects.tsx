@@ -13,7 +13,7 @@ export default function Projects() {
     },
     {
       title: "My Wallet",
-      description: "MyWallet is mobile view a full-stack app that makes it easy to track your finances. Add, edit, or delete transactions with descriptions and amounts, all in a simple and interactive interface built with React.",
+      description: "MyWallet is a mobile view full-stack app that makes it easy to track your finances. Add, edit, or delete transactions with descriptions and amounts, all in a simple and interactive interface built with React.",
       tags: ["React", "Node.js", "Figma", "MongoDB", "Bcrypt"],
       bgColor: "bg-[#FF5733]",
       image: "/images/myWallet.png",
@@ -25,7 +25,7 @@ export default function Projects() {
       tags: ["Next.js", "Typescript", "TailwindCSS"],
       bgColor: "bg-[#FFC600]",
       image: "/images/FlowerPortf.png",
-      href: "https://my-portfolio-i8k0uhytz-rafaelamirabiles-projects.vercel.app/",
+      href: "https://my-portfolio-jzey.vercel.app/",
     },
   ];
 

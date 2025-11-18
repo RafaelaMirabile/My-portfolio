@@ -6,9 +6,9 @@ const experienceData = [
     title: "Website Content Editor",
     date: "January 2024 - Current",
     details: [
-      "Ligth front-end coding (HTML, CSS, JavaScript).",
+      "Light front-end coding (HTML, CSS, JavaScript).",
       "Activation and configuration of website features using CMS-Magento2 extensions.",
-      "Maintance of content across multiple markets.",
+      "Maintenance of content across multiple markets.",
       "Quality assurance checks (fixing broken links, implementing redirects, adding ALT tags and metadata).",
     ],
     bgColor: "bg-[#FFC600]",
@@ -47,9 +47,9 @@ export default function Experience() {
                 className="flex items-center justify-between w-[50rem]"
               >
                 <div className="flex w-full flex-col items-start">
-                  <h3 className="text-lg">{item.title}</h3>
-                  <p className="text-sm text-gray-500">{item.date}</p>
-                  <p className="text-sm text-gray-500">{item.company}</p>
+                  <h3 className="text-3xl">{item.title}</h3>
+                  <p className="text-xl text-gray-500">{item.date}</p>
+                  <p className="text-xl text-gray-500">{item.company}</p>
                 </div>
 
                 {/* Seta com camada atrás */}

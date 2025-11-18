@@ -30,20 +30,25 @@ export default function Dock() {
     <DockContainer>
       {navIcons.navbar.map(({ icon: Icon, href, label }) => (
         <DockIcon key={label} label={label}>
-          <Link href={href}><Icon className="h-5 w-5 text-black" /></Link>
+          <Link href={href}>
+            <Icon className="h-5 w-5 text-black" />
+          </Link>
         </DockIcon>
       ))}
 
       <Separator orientation="vertical" className="mx-1 h-6 bg-black" />
 
       {navIcons.social.map(({ icon: Icon, href, label }) => (
-        <DockIcon key={label} label={label} >
-          <Link href={href}><Icon className="h-5 w-5 text-black" /></Link>
+        <DockIcon key={label} label={label}>
+          <Link href={href} target="_blank" rel="noopener noreferrer">
+            <Icon className="h-5 w-5 text-black" />
+          </Link>
         </DockIcon>
       ))}
     </DockContainer>
   );
 }
+
 
 function DockContainer({ children }: { children: React.ReactNode }) {
   const mouseX = useMotionValue(Infinity);
