@@ -16,7 +16,7 @@ export default function Projects() {
       description: "MyWallet is mobile view a full-stack app that makes it easy to track your finances. Add, edit, or delete transactions with descriptions and amounts, all in a simple and interactive interface built with React.",
       tags: ["React", "Node.js", "Figma", "MongoDB", "Bcrypt"],
       bgColor: "bg-[#FF5733]",
-      image: "/images/MyWallet.png",
+      image: "/images/myWallet.png",
       href: "https://mywallet-iota.vercel.app/",
     },
     {
