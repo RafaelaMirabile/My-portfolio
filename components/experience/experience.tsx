@@ -8,7 +8,7 @@ const experienceData = [
     details: [
       "Ligth front-end coding (HTML, CSS, JavaScript).",
       "Activation and configuration of website features using CMS-Magento2 extensions.",
-      "Maintance of content across multiple websites.",
+      "Maintance of content across multiple markets.",
       "Quality assurance checks (fixing broken links, implementing redirects, adding ALT tags and metadata).",
     ],
     bgColor: "bg-[#FFC600]",
