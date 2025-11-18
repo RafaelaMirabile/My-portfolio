@@ -2,7 +2,7 @@
 
 import { motion, HTMLMotionProps, useMotionValue, useSpring, useTransform, MotionValue } from 'framer-motion';
 import React, { useRef } from 'react';
-import { FiHome, FiUser, FiMail, FiGithub, FiLinkedin, FiTool, FiFolderPlus } from 'react-icons/fi';
+import { FiUser, FiMail, FiGithub, FiLinkedin, FiTool, FiFolderPlus, FiFile } from 'react-icons/fi';
 import Link from 'next/link';
 import { Separator } from '@/components/magicui/separator';
 import { cn } from '@/lib/utils';
@@ -13,15 +13,15 @@ const DEFAULT_DISTANCE = 140;
 
 const navIcons = {
   navbar: [
-    { href: '/', icon: FiHome, label: 'Home' },
-    { href: '/about', icon: FiUser, label: 'Me' },
+    { href: '/?scrollTo=about', icon: FiUser, label: 'Me' },
     { href: '/?scrollTo=contact', icon: FiMail, label: 'Contact' },
     { href: '/?scrollTo=tools', icon: FiTool, label: 'Tools' },
+    { href: '/?scrollTo=projects', icon: FiFile, label: 'Projects' },
     { href: '/?scrollTo=experience', icon: FiFolderPlus, label: 'Experience' },
   ],
   social: [
-    { href: 'https://github.com/seu-usuario', icon: FiGithub, label: 'GitHub' },
-    { href: 'https://www.linkedin.com/in/seu-usuario', icon: FiLinkedin, label: 'LinkedIn' },
+    { href: 'https://github.com/RafaelaMirabile', icon: FiGithub, label: 'GitHub' },
+    { href: 'https://www.linkedin.com/in/rafaelamirabile/', icon: FiLinkedin, label: 'LinkedIn' },
   ],
 };
 
@@ -29,7 +29,7 @@ export default function Dock() {
   return (
     <DockContainer>
       {navIcons.navbar.map(({ icon: Icon, href, label }) => (
-        <DockIcon key={label}>
+        <DockIcon key={label} label={label}>
           <Link href={href}><Icon className="h-5 w-5 text-black" /></Link>
         </DockIcon>
       ))}
@@ -37,7 +37,7 @@ export default function Dock() {
       <Separator orientation="vertical" className="mx-1 h-6 bg-black" />
 
       {navIcons.social.map(({ icon: Icon, href, label }) => (
-        <DockIcon key={label}>
+        <DockIcon key={label} label={label} >
           <Link href={href}><Icon className="h-5 w-5 text-black" /></Link>
         </DockIcon>
       ))}
@@ -58,11 +58,11 @@ function DockContainer({ children }: { children: React.ReactNode }) {
     >
       {React.Children.map(children, (child) => {
         if (React.isValidElement<DockIconProps>(child) && child.type === DockIcon) {
-          // Pass typed mouseX
           return React.cloneElement(child, { mouseX });
         }
         return child;
       })}
+
     </motion.div>
   );
 }
@@ -71,7 +71,8 @@ interface DockIconProps extends HTMLMotionProps<'div'> {
   size?: number;
   magnification?: number;
   distance?: number;
-  mouseX?: MotionValue<number>; // ✅ properly typed
+  mouseX?: MotionValue<number>; 
+  label?: string; 
 }
 
 function DockIcon({
@@ -98,10 +99,13 @@ function DockIcon({
     <motion.div
       ref={ref}
       style={{ width: scaleSize, height: scaleSize, padding }}
-      className="flex aspect-square cursor-pointer items-center justify-center rounded-full hover:bg-[#5F9EA0]"
+      className="flex aspect-square cursor-pointer items-center justify-center rounded-full"
       {...props}
     >
       {children}
     </motion.div>
   );
 }
+
+
+

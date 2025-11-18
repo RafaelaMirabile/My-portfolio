@@ -12,13 +12,10 @@ export default function AboutMe() {
 function HeroSection() {
   return (
     <>
-      <section className="relative border-t border-b border-black flex flex-col-reverse md:flex-row justify-between items-center px-26 py-10 bg-pink-400 overflow-hidden">
+      <section className="relative border-t border-b border-black flex flex-col-reverse md:flex-row justify-between items-center px-26 py-6 bg-pink-400 overflow-hidden">
         <div className="max-w-xl text-black relative">
           <p className="text-xl md:text-2xl font-medium">
-            “I launched MaxPacks as an experimental side gig; but within 2 years
-            those Procreate brushes were earning more than my 6-figure salary in CG.
-            Leaving in favor of Gumroad enabled me to explore other aspects of my art,
-            develop new hobbies, and finally prioritize my personal life.”
+            “I’m a Content Editor and Web Developer with experience maintaining and optimizing websites, creating new pages, ensuring UX quality, configuring site features, and leveraging CMS and analytics to deliver high-quality digital experiences.”
           </p>
         </div>
         <div className="relative">

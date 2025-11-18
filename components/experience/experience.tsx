@@ -3,34 +3,28 @@ import { FiArrowRight } from "react-icons/fi";
 
 const experienceData = [
   {
-    title: "Gumroad April Recap: What We've Shipped",
-    date: "May 1, 2025",
+    title: "Website Content Editor",
+    date: "January 2024 - Current",
     details: [
-      "Launched new dashboard feature.",
-      "Improved user onboarding flow.",
-      "Fixed bugs reported by users.",
-    ],
-    bgColor: "bg-pink-400",
-  },
-  {
-    title: "LifeMathMoney: How I launched my product and grew a following",
-    date: "April 23, 2025",
-    details: [
-      "Built community engagement.",
-      "Launched marketing campaigns.",
-      "Received 500+ new subscribers.",
+      "Ligth front-end coding (HTML, CSS, JavaScript).",
+      "Activation and configuration of website features using CMS-Magento2 extensions.",
+      "Maintance of content across multiple websites.",
+      "Quality assurance checks (fixing broken links, implementing redirects, adding ALT tags and metadata).",
     ],
     bgColor: "bg-[#FFC600]",
+    company: "Nestlé Business Services Lisbon"
   },
   {
-    title: "Small Bets is joining Gumroad 🎉",
-    date: "April 22, 2025",
+    title: "Wordpress Freelancer",
+    date: "January 2022 - June 2023",
     details: [
-      "Announced acquisition publicly.",
-      "Merged product roadmaps.",
-      "Onboarded Small Bets team.",
+      "Customizing and creating themes.",
+      "Responsive and mobile-friendly layouts.",
+      "Updating and formatting content.",
+      "Managing menus, pages, widgets and plugins."
     ],
     bgColor: "bg-[#5F9EA0]",
+    company: "Self-employed"
   },
 ];
 
@@ -55,6 +49,7 @@ export default function Experience() {
                 <div className="flex w-full flex-col items-start">
                   <h3 className="text-lg">{item.title}</h3>
                   <p className="text-sm text-gray-500">{item.date}</p>
+                  <p className="text-sm text-gray-500">{item.company}</p>
                 </div>
 
                 {/* Seta com camada atrás */}
