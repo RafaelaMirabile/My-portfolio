@@ -20,7 +20,7 @@ export default function Projects() {
       href: "https://mywallet-iota.vercel.app/",
     },
     {
-      title: "Rafaela Mirabile Portfolio",
+      title: "Rafaela C. Mirabile",
       description: "My personal website in NextJS, Typescript and TailwindCSS using MagicUI components, with highly customized design, theme and animations.",
       tags: ["Next.js", "Typescript", "TailwindCSS"],
       bgColor: "bg-[#FFC600]",
